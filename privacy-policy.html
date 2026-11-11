@@ -10,14 +10,20 @@
   @media (prefers-color-scheme: dark) { :root { --bg:#0b0b0b; --fg:#ededed; --muted:#a3a3a3; --line:#262626; --accent:#22d3ee; } }
   * { box-sizing: border-box; }
   body { margin:0; background:var(--bg); color:var(--fg); font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  main { max-width: 760px; margin: 0 auto; padding: 40px 16px 80px; }
+  main { max-width: 760px; margin: 0 auto; padding: 24px 16px 80px; }
   h1 { font-size: 1.9rem; line-height:1.2; margin: 0 0 4px; }
   h2 { font-size: 1.25rem; margin: 2.2em 0 .4em; }
   h3 { font-size: 1.02rem; margin: 1.6em 0 .3em; }
   p, li { color: var(--fg); }
   .muted { color: var(--muted); }
-  nav { display:flex; gap:12px; margin: 16px 0 28px; flex-wrap: wrap; }
-  nav a { color: var(--accent); text-decoration: none; border:1px solid var(--line); padding:6px 12px; border-radius:999px; }
+  /* Sticky, so the switcher stays visible even when a #pl / #sv link scrolls the page. */
+  .lang { display:flex; gap:8px; margin: 0 0 28px; flex-wrap: wrap; position: sticky; top: 0; z-index: 1; background: var(--bg); padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .lang a { color: var(--accent); text-decoration: none; border:1px solid var(--line); padding:6px 14px; border-radius:999px; font-weight:600; letter-spacing:.03em; }
+  .lang a[aria-current="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+  /* With JavaScript only the chosen language is shown; without it all three stay visible. */
+  .js section[lang] { display:none; }
+  .js section[lang].active { display:block; }
+  .js hr.between { display:none; }
   a { color: var(--accent); }
   table { width:100%; border-collapse: collapse; margin: .6em 0 1em; font-size: .95rem; }
   th, td { text-align:left; vertical-align: top; padding: 8px 10px; border-bottom:1px solid var(--line); }
@@ -29,11 +35,15 @@
 </head>
 <body>
 <main>
-<h1>Compliever – Privacy Policy</h1>
-<p class="muted">Effective date: 9 November 2026 · App: Compliever (Compulsory Achiever), Android, package <code>com.compliever.app</code></p>
-<nav><a href="#en">English</a><a href="#pl">Polski</a></nav>
+<nav class="lang" aria-label="Language / Język / Språk">
+<a href="#en" hreflang="en" lang="en" data-lang="en" title="English">EN</a>
+<a href="#pl" hreflang="pl" lang="pl" data-lang="pl" title="Polski">PL</a>
+<a href="#sv" hreflang="sv" lang="sv" data-lang="sv" title="Svenska">SV</a>
+</nav>
 
 <section id="en" lang="en">
+<h1>Compliever – Privacy Policy</h1>
+<p class="muted">Effective date: 9 November 2026 · Last updated: 11 November 2026 (Swedish version added) · App: Compliever (Compulsory Achiever), Android, package <code>com.compliever.app</code></p>
 <div class="box"><strong>In short:</strong> Compliever keeps everything on your phone. There are no accounts, no analytics, no ads and no tracking. The app does not send your data to us or to anyone else.</div>
 
 <h2>1. Who we are</h2>
@@ -70,13 +80,13 @@
 
 <h2>6. Your control and deletion</h2>
 <ul>
-<li><strong>Delete everything</strong>: Settings → "Reset all settings" deletes tasks, settings, statistics, uploaded images and Premium status from the app.</li>
+<li><strong>Delete everything</strong>: Settings → Data → "Reset everything" deletes tasks, settings, statistics, uploaded images and Premium status from the app.</li>
 <li><strong>Uninstall</strong>: removes all app data from your phone.</li>
 </ul>
 <p>Because we hold no data about you on any server, there is nothing for us to export or delete on our side. If you contact us by email, we use your email only to reply and delete the conversation when it is no longer needed.</p>
 
 <h2>7. Purchases</h2>
-<p>Paid options (Premium, Founder, coffee) are shown as "Coming soon" and cannot be bought yet. When they become available, payments will be processed by Google Play; we will not receive your card details. This policy will be updated before that change.</p>
+<p>Paid options (Premium, Founder, coffee) are shown as "Coming Soon" and cannot be bought yet. When they become available, payments will be processed by Google Play; we will not receive your card details. This policy will be updated before that change.</p>
 
 <h2>8. Children</h2>
 <p>Compliever is not directed at children under 13 and does not knowingly collect any personal data from anyone.</p>
@@ -88,11 +98,11 @@
 <p>We will post any changes on this page and update the effective date above. Significant changes will also be mentioned in the app's release notes.</p>
 </section>
 
-<hr>
+<hr class="between">
 
 <section id="pl" lang="pl">
 <h1>Compliever – Polityka prywatności</h1>
-<p class="muted">Obowiązuje od: 9 listopada 2026 · Aplikacja: Compliever (Compulsory Achiever), Android, pakiet <code>com.compliever.app</code></p>
+<p class="muted">Obowiązuje od: 9 listopada 2026 · Ostatnia zmiana: 11 listopada 2026 (dodana wersja szwedzka) · Aplikacja: Compliever (Compulsory Achiever), Android, pakiet <code>com.compliever.app</code></p>
 <div class="box"><strong>W skrócie:</strong> Compliever przechowuje wszystko na Twoim telefonie. Bez kont, bez analityki, bez reklam i bez śledzenia. Aplikacja nie wysyła Twoich danych ani do nas, ani nikomu innemu.</div>
 
 <h2>1. Kim jesteśmy</h2>
@@ -104,21 +114,21 @@
 <thead><tr><th>Dane</th><th>Po co</th><th>Gdzie są przechowywane</th></tr></thead>
 <tbody>
 <tr><td>Twoje zadania, odhaczenia, historia i liczniki</td><td>Wyświetlanie dziennej listy i statystyk</td><td>Pamięć aplikacji na telefonie</td></tr>
-<tr><td>Ustawienia (kiedy pokazywać, drzemka, motyw, kolory, Tryb Guardian i jego hasło)</td><td>Działanie aplikacji tak, jak wybrałeś</td><td>Pamięć aplikacji na telefonie</td></tr>
+<tr><td>Ustawienia (kiedy pokazywać, powrót po zamknięciu, motyw, kolory, Tryb Strażnika i jego hasło)</td><td>Działanie aplikacji tak, jak wybierzesz</td><td>Pamięć aplikacji na telefonie</td></tr>
 <tr><td>Obrazy lub animacje, które sam wgrasz jako tło / celebrację</td><td>Wyświetlanie ich w aplikacji</td><td>Pamięć aplikacji na telefonie (oryginalny plik nie jest zmieniany)</td></tr>
-<tr><td>Informacje techniczne o niezawodności (np. czy popup się otworzył, kiedy ostatnio działała usługa w tle)</td><td>Zielone/szare wskaźniki w Ustawieniach</td><td>Pamięć aplikacji na telefonie</td></tr>
+<tr><td>Informacje techniczne o niezawodności (np. czy okno z zadaniami się otworzyło, kiedy ostatnio działała usługa w tle)</td><td>Zielone/szare wskaźniki w Ustawieniach</td><td>Pamięć aplikacji na telefonie</td></tr>
 </tbody>
 </table>
 <p><strong>Nie</strong> zbieramy: imienia i nazwiska, e-maila, numeru telefonu, kontaktów, lokalizacji, galerii zdjęć, identyfikatorów urządzenia, identyfikatora reklamowego ani analityki użycia. Aplikacja nie ma kont ani logowania.</p>
 
 <h2>3. Udostępnianie</h2>
-<p>Nie udostępniamy ani nie sprzedajemy żadnych danych, bo aplikacja nie wysyła ich poza urządzenie. Gdy <em>Ty</em> klikniesz „Share” na karcie licznika, otworzy się systemowe okno udostępniania Androida i to Ty wybierasz, która aplikacja dostanie tekst.</p>
+<p>Nie udostępniamy ani nie sprzedajemy żadnych danych, bo aplikacja nie wysyła ich poza urządzenie. Gdy <em>Ty</em> dotkniesz „Udostępnij” na karcie licznika, otworzy się systemowe okno udostępniania Androida i to Ty wybierasz, która aplikacja dostanie tekst.</p>
 <p>Aplikacja nie ładuje reklam, analityki ani bibliotek śledzących i nie wykonuje połączeń sieciowych w celu zbierania danych. Czcionki i cała treść są wbudowane w aplikację.</p>
 
-<h2>4. Uprawnienia i po co</h2>
+<h2>4. Uprawnienia i do czego służą</h2>
 <ul>
 <li><strong>Wyświetlanie nad innymi aplikacjami</strong>: żeby pokazać listę zadań zaraz po odblokowaniu telefonu.</li>
-<li><strong>Powiadomienia</strong>: Android wymaga małego powiadomienia „Compliever is active”, gdy działa nasłuch odblokowania; może też otworzyć listę, jeśli popup nie może otworzyć się bezpośrednio.</li>
+<li><strong>Powiadomienia</strong>: Android wymaga małego powiadomienia „Compliever działa”, gdy aplikacja czeka na odblokowanie telefonu; powiadomienie może też otworzyć listę, jeśli okno z zadaniami nie może otworzyć się samo.</li>
 <li><strong>Działanie na pierwszym planie / start po włączeniu telefonu</strong>: żeby reagować na odblokowanie, także po restarcie.</li>
 <li><strong>Wybór zdjęcia</strong> (bez uprawnienia): odczytywany jest tylko obraz, który sam wybierzesz jako tło.</li>
 </ul>
@@ -129,23 +139,112 @@
 
 <h2>6. Kontrola i usuwanie danych</h2>
 <ul>
-<li><strong>Usuń wszystko</strong>: Ustawienia → „Reset all settings” usuwa zadania, ustawienia, statystyki, wgrane obrazy i status Premium.</li>
+<li><strong>Usuń wszystko</strong>: Ustawienia → Dane → „Zresetuj wszystko” usuwa zadania, ustawienia, statystyki, wgrane obrazy i status Premium.</li>
 <li><strong>Odinstalowanie</strong>: usuwa wszystkie dane aplikacji z telefonu.</li>
 </ul>
 <p>Nie przechowujemy o Tobie żadnych danych na serwerach, więc po naszej stronie nie ma czego eksportować ani usuwać. Jeśli napiszesz do nas e-mail, użyjemy go tylko do odpowiedzi i usuniemy korespondencję, gdy nie będzie już potrzebna.</p>
 
 <h2>7. Zakupy</h2>
-<p>Płatne opcje (Premium, Founder, kawa) są oznaczone „Coming soon” i nie można ich jeszcze kupić. Gdy będą dostępne, płatności obsłuży Google Play; nie otrzymamy danych Twojej karty. Przed tą zmianą zaktualizujemy tę politykę.</p>
+<p>Płatne opcje (Premium, Founder, kawa) są oznaczone „Wkrótce” i nie można ich jeszcze kupić. Gdy będą dostępne, płatności obsłuży Google Play; nie otrzymamy danych Twojej karty. Przed tą zmianą zaktualizujemy tę politykę.</p>
 
 <h2>8. Dzieci</h2>
 <p>Compliever nie jest skierowany do dzieci poniżej 13 lat i świadomie nie zbiera danych osobowych od nikogo.</p>
 
-<h2>9. Podstawa prawna (EOG/UK)</h2>
+<h2>9. Podstawa prawna (EOG i Wielka Brytania)</h2>
 <p>Dane pozostają na Twoim urządzeniu i są przetwarzane przez aplikację tylko w celu świadczenia funkcji, z których korzystasz (wykonanie usługi, o którą prosisz – art. 6 ust. 1 lit. b RODO). Nie jesteśmy odbiorcą tych danych.</p>
 
 <h2>10. Zmiany</h2>
-<p>Zmiany opublikujemy na tej stronie i zaktualizujemy datę powyżej. Istotne zmiany opiszemy także w informacjach o wersji aplikacji.</p>
+<p>Zmiany opublikujemy na tej stronie i zaktualizujemy datę ostatniej zmiany powyżej. Istotne zmiany opiszemy także w informacjach o wersji aplikacji.</p>
+</section>
+
+<hr class="between">
+
+<section id="sv" lang="sv">
+<h1>Compliever – Integritetspolicy</h1>
+<p class="muted">Gäller från: 9 november 2026 · Senast ändrad: 11 november 2026 (svensk version tillagd) · App: Compliever (Compulsory Achiever), Android, paket <code>com.compliever.app</code></p>
+<div class="box"><strong>Kort sagt:</strong> Compliever sparar allt på din mobil. Inga konton, ingen analys, inga annonser och ingen spårning. Appen skickar inte dina uppgifter till oss eller någon annan.</div>
+
+<h2>1. Vem vi är</h2>
+<p>Compliever utvecklas av en fristående utvecklare i Sverige (”vi”). Kontakt: <a href="mailto:inmawi.bussines@gmail.com">inmawi.bussines@gmail.com</a>.</p>
+
+<h2>2. Vilka uppgifter appen hanterar</h2>
+<p>För att fungera sparar appen följande <strong>enbart på din enhet</strong>:</p>
+<table>
+<thead><tr><th>Uppgift</th><th>Varför</th><th>Var den sparas</th></tr></thead>
+<tbody>
+<tr><td>Dina uppgifter, avbockningar, historik och räknare</td><td>Visa din dagliga lista och statistik</td><td>Appens lagring på din mobil</td></tr>
+<tr><td>Inställningar (när listan visas och när den kommer tillbaka, tema, färger, Väktarläge och dess lösenord)</td><td>Få appen att bete sig som du valt</td><td>Appens lagring på din mobil</td></tr>
+<tr><td>Bilder eller animationer du själv laddar upp som bakgrund eller firande</td><td>Visa dem i appen</td><td>Appens lagring på din mobil (originalfilen ändras inte)</td></tr>
+<tr><td>Teknisk information om tillförlitlighet (t.ex. om uppgiftslistan öppnades, när bakgrundstjänsten senast kördes)</td><td>Visa de gröna/grå markeringarna i Inställningar</td><td>Appens lagring på din mobil</td></tr>
+</tbody>
+</table>
+<p>Vi samlar <strong>inte</strong> in: ditt namn, din e-post, ditt telefonnummer, dina kontakter, din position, ditt bildbibliotek, enhets-ID, annons-ID eller användningsstatistik. Appen har inget konto eller inloggning.</p>
+
+<h2>3. Delning</h2>
+<p>Vi delar eller säljer inga uppgifter, eftersom appen inte skickar något från din enhet. När <em>du</em> trycker på ”Dela” på räknarkortet öppnas Androids delningsmeny och du bestämmer själv vilken app som får texten.</p>
+<p>Appen laddar inga annonser, analys- eller spårningsbibliotek och gör inga nätverksanrop för att samla in data. Typsnitt och allt appinnehåll finns inbyggt i appen.</p>
+
+<h2>4. Behörigheter och varför vi ber om dem</h2>
+<ul>
+<li><strong>Visa över andra appar</strong>: för att visa din uppgiftslista direkt när du låser upp mobilen.</li>
+<li><strong>Aviseringar</strong>: Android kräver en liten avisering, ”Compliever är aktiv”, medan appen håller koll på när mobilen låses upp. Aviseringen kan också öppna listan om den inte kan öppnas direkt.</li>
+<li><strong>Köra i förgrunden / starta vid uppstart</strong>: för att fortsätta märka när du låser upp mobilen, även efter en omstart.</li>
+<li><strong>Bildväljaren</strong> (ingen behörighet): bara den bild du väljer läses, när du själv väljer att ladda upp en bakgrund.</li>
+</ul>
+<p>Du kan när som helst återkalla en behörighet i mobilens inställningar.</p>
+
+<h2>5. Säkerhetskopior</h2>
+<p>Appen är utesluten från Androids molnbackup, så dina uppgifter kopieras inte till någon molnbackup. Avinstallerar du appen raderas alla dess data.</p>
+
+<h2>6. Din kontroll och radering</h2>
+<ul>
+<li><strong>Radera allt</strong>: Inställningar → Data → ”Återställ allt” raderar uppgifter, inställningar, statistik, uppladdade bilder och Premium-status i appen.</li>
+<li><strong>Avinstallera</strong>: tar bort alla appdata från din mobil.</li>
+</ul>
+<p>Eftersom vi inte har några uppgifter om dig på någon server finns det inget för oss att exportera eller radera. Om du mejlar oss använder vi din e-post bara för att svara, och raderar konversationen när den inte behövs längre.</p>
+
+<h2>7. Köp</h2>
+<p>Betalalternativen (Premium, Founder, kaffe) visas som ”Snart” och går inte att köpa än. När de blir tillgängliga hanteras betalningarna av Google Play, och vi får inte dina kortuppgifter. Den här policyn uppdateras innan dess.</p>
+
+<h2>8. Barn</h2>
+<p>Compliever riktar sig inte till barn under 13 år och samlar medvetet inte in personuppgifter från någon.</p>
+
+<h2>9. Rättslig grund (EES och Storbritannien)</h2>
+<p>Uppgifterna stannar på din enhet och behandlas av appen bara för att ge dig de funktioner du använder (fullgörande av den tjänst du begärt, GDPR art. 6.1 b). Vi är inte mottagare av dessa uppgifter.</p>
+
+<h2>10. Ändringar</h2>
+<p>Ändringar publiceras på den här sidan och datumet för senaste ändring ovan uppdateras. Större ändringar nämns också i appens versionsanteckningar.</p>
 </section>
 </main>
+<script>
+(function () {
+  var langs = ['en', 'pl', 'sv'];
+  var titles = { en: 'Compliever – Privacy Policy', pl: 'Compliever – Polityka prywatności', sv: 'Compliever – Integritetspolicy' };
+  document.documentElement.className += ' js';
+  function pick() {
+    var h = (location.hash || '').slice(1).toLowerCase();
+    if (langs.indexOf(h) >= 0) return h;
+    var n = ((navigator.languages && navigator.languages[0]) || navigator.language || 'en').slice(0, 2).toLowerCase();
+    return langs.indexOf(n) >= 0 ? n : 'en';
+  }
+  function show(lang) {
+    langs.forEach(function (l) {
+      var sec = document.getElementById(l);
+      if (sec) sec.className = l === lang ? 'active' : '';
+    });
+    var links = document.querySelectorAll('.lang a');
+    for (var i = 0; i < links.length; i++) {
+      links[i].setAttribute('aria-current', links[i].getAttribute('data-lang') === lang ? 'true' : 'false');
+    }
+    document.documentElement.lang = lang;
+    document.title = titles[lang];
+  }
+  show(pick());
+  // A #pl / #sv link scrolls to the section; go back to the top once the browser is done with that.
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  window.addEventListener('load', function () { if (location.hash) setTimeout(function () { window.scrollTo(0, 0); }, 0); });
+  window.addEventListener('hashchange', function () { show(pick()); window.scrollTo(0, 0); });
+})();
+</script>
 </body>
 </html>
