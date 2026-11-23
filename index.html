@@ -3,11 +3,120 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Compliever</title>
-<meta http-equiv="refresh" content="0; url=privacy-policy.html">
-<style>body{margin:0;background:#0b0b0b;color:#ededed;font:16px system-ui,sans-serif;padding:40px 16px}a{color:#22d3ee}</style>
+<title>Compliever – your to-do list after every unlock</title>
+<meta name="description" content="Compliever (Compulsory Achiever) for Android: today's to-do list appears every time you unlock your phone, until it's done. No account, no ads, everything stays on your phone.">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="favicon.ico">
+<link rel="alternate" hreflang="pl" href="pl.html">
+<link rel="alternate" hreflang="sv" href="sv.html">
 </head>
 <body>
-<p>Compliever – <a href="privacy-policy.html">Privacy Policy / Polityka prywatności / Integritetspolicy</a></p>
+<header class="top">
+  <a class="brand" href="index.html">Compliever</a>
+  <nav aria-label="Language"><a href="index.html" aria-current="page" lang="en">EN</a><a href="pl.html" lang="pl">PL</a><a href="sv.html" lang="sv">SV</a></nav>
+</header>
+
+<section class="hero">
+  <h1>Your to-do list, every time you unlock your phone.</h1>
+  <p class="lead">Procrastination starts with one unlock. Compliever (Compulsory Achiever) shows today's tasks first, so you do them before you scroll. For Android.</p>
+  <div class="buttons">
+    <!-- PLAY_LINK: after the app is public, set href to https://play.google.com/store/apps/details?id=com.compliever.app, remove aria-disabled and change the text to "Get it on Google Play". -->
+    <a class="btn primary" href="#" aria-disabled="true">Google Play – coming soon</a>
+    <a class="btn" href="https://discord.gg/Q7YK2AneS6" rel="noopener">Discord</a>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Pick how firm it should be</h2>
+  <div class="levels">
+    <div class="card"><h3>Light</h3><p>Your list lives in a notification and a home-screen widget. No window over your apps, fingerprint unlock works as usual.</p></div>
+    <div class="card"><h3>Classic</h3><p>The list opens full screen after you unlock, and on the lock screen. Close it and it comes back after a time you choose.</p></div>
+    <div class="card"><h3>Strict</h3><p>Like Classic, but it comes back after 1 minute, until today's tasks are done.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Screenshots</h2>
+  <div class="shots">
+    <figure><img src="img/en/01-list-after-unlock.png" alt="Today's task list after unlocking the phone" loading="lazy" width="1080" height="1920"><figcaption>After you unlock</figcaption></figure>
+    <figure><img src="img/en/04-lock-screen-diamond.png" alt="Task list on the lock screen, Diamond look" loading="lazy" width="1080" height="1920"><figcaption>On the lock screen</figcaption></figure>
+    <figure><img src="img/en/07-levels-light-classic-strict.png" alt="Choosing Light, Classic or Strict" loading="lazy" width="1080" height="1920"><figcaption>Light, Classic, Strict</figcaption></figure>
+    <figure><img src="img/en/09-light-notification.png" alt="Light: the list in a notification" loading="lazy" width="1080" height="1920"><figcaption>Light: notification</figcaption></figure>
+    <figure><img src="img/en/10-home-widget.png" alt="Home-screen widget with today's tasks" loading="lazy" width="1080" height="1920"><figcaption>Home-screen widget</figcaption></figure>
+  </div>
+</section>
+
+<section class="section">
+  <h2>What it does</h2>
+  <ul class="features">
+    <li>Everyday tasks, tasks for chosen weekdays and one-time tasks, also for future days</li>
+    <li>Reminders at a set time, with "Done" and "Snooze 10 min"</li>
+    <li>Important tasks, drag to reorder, unfinished one-time tasks carry over to the next day</li>
+    <li>Home-screen widget: tick tasks off without opening the app</li>
+    <li>Two lock-screen looks (Clock or Diamond); tick tasks off right there</li>
+    <li>Daily reset at the hour you choose, a small celebration when everything is done</li>
+    <li>Optional Guardian Mode with a partner's password (off by default, asks for your consent, has an emergency exit)</li>
+    <li>Backup: Android's phone backup and a backup file you can export and import</li>
+    <li>English, Polish and Swedish; light and dark theme</li>
+    <li>No account, no ads, no analytics. Free. Premium and Founder: coming soon.</li>
+  </ul>
+</section>
+
+<section class="section" id="faq">
+  <h2>Questions</h2>
+  <details>
+    <summary>Why doesn't my list show up?</summary>
+    <p>First check the level: <strong>Light</strong> never opens a window – the list is in the notification and the widget. In Classic and Strict open <em>Settings → Permissions &amp; reliability</em>: every line should be green. "Fix it" opens the right screen, "Test now" checks that the window opens by itself.</p>
+    <p>Many phones stop apps in the background to save battery. Settings for the most common brands (names can differ a little between versions):</p>
+    <ul>
+      <li><strong>Realme, Oppo, OnePlus:</strong> app info → Battery usage → allow background activity and auto launch; turn off "Pause app activity if unused"; lock Compliever in Recent apps (on its card tap ⋮ or press and hold, then Lock).</li>
+      <li><strong>Xiaomi, Redmi, POCO:</strong> app info → Autostart on; Battery saver → No restrictions; Other permissions → allow pop-up windows in the background and on the lock screen; lock it in recent apps.</li>
+      <li><strong>Samsung:</strong> Battery → Background usage limits → add Compliever to "Never sleeping apps"; app info → Battery → Unrestricted.</li>
+      <li><strong>Other phones:</strong> app info → Battery → Unrestricted (or "Don't optimize").</li>
+    </ul>
+    <p>The setup in the app shows these steps for your phone.</p>
+  </details>
+  <details>
+    <summary>How do Light, Classic and Strict differ?</summary>
+    <p>Light: notification and widget only, nothing covers your screen. Classic: a full-screen list after unlocking and on the lock screen; when you close it, it comes back after the time you set. Strict: like Classic, but it comes back after 1 minute until today's tasks are done. You can change the level any time in Settings → Display.</p>
+  </details>
+  <details>
+    <summary>How do I add the widget?</summary>
+    <p>Setup and Settings → Display can ask your phone to add the widget. Some phones (for example Realme) say it was added but put it nowhere. If the widget is not on your home screen, add it by hand:</p>
+    <ol>
+      <li>Long-press an empty spot on the home screen.</li>
+      <li>Tap Widgets.</li>
+      <li>Find Compliever and drag it onto the screen.</li>
+    </ol>
+    <p>Tip: long-press the widget to make it bigger.</p>
+  </details>
+  <details>
+    <summary>Will it cover my alarm or a phone call?</summary>
+    <p>No. Alarms, timers and calls always come first. The list steps aside and comes back when they are over.</p>
+  </details>
+  <details>
+    <summary>Why does fingerprint unlock stop working in Classic?</summary>
+    <p>On some phones a window over the lock screen switches the fingerprint reader off. Unlock with the button on the list, or choose Light, which never opens a window.</p>
+  </details>
+  <details>
+    <summary>New phone – will I lose my tasks?</summary>
+    <p>From version 1.0.11: if Android's phone backup is on, your tasks and settings come back by themselves when you install Compliever on a new phone. You can also use Settings → Data → Backup → "Export to file" and import the file on the new phone. Permissions are set up again on the new phone.</p>
+  </details>
+  <details>
+    <summary>Does it cost anything?</summary>
+    <p>Compliever is free, with no limit on tasks and no account. Optional Premium and Founder are coming soon.</p>
+  </details>
+  <details>
+    <summary>What happens to my data?</summary>
+    <p>Everything stays on your phone. The app has no server and sends nothing. Details: <a href="privacy-policy.html">privacy policy</a>.</p>
+  </details>
+</section>
+
+<footer class="foot">
+  <a href="privacy-policy.html">Privacy policy</a> ·
+  <a href="licenses.html">Open source licenses</a> ·
+  <a href="https://discord.gg/Q7YK2AneS6" rel="noopener">Discord</a>
+  <p>Compliever is made by an independent developer in Sweden. Android is a trademark of Google LLC.</p>
+</footer>
 </body>
 </html>

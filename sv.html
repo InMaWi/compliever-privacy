@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compliever – din att göra-lista vid varje upplåsning</title>
+<meta name="description" content="Compliever (Compulsory Achiever) för Android: dagens att göra-lista visas varje gång du låser upp telefonen, tills allt är klart. Inget konto, inga annonser, allt stannar i telefonen.">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="favicon.ico">
+<link rel="alternate" hreflang="en" href="index.html">
+<link rel="alternate" hreflang="pl" href="pl.html">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="sv.html">Compliever</a>
+  <nav aria-label="Språk"><a href="index.html" lang="en">EN</a><a href="pl.html" lang="pl">PL</a><a href="sv.html" aria-current="page" lang="sv">SV</a></nav>
+</header>
+
+<section class="hero">
+  <h1>Din att göra-lista, varje gång du låser upp telefonen.</h1>
+  <p class="lead">Förhalning börjar med en upplåsning. Compliever (Compulsory Achiever) visar dagens uppgifter först, så att du gör dem innan du börjar scrolla. För Android.</p>
+  <div class="buttons">
+    <!-- PLAY_LINK: när appen är publik, sätt href till https://play.google.com/store/apps/details?id=com.compliever.app, ta bort aria-disabled och ändra texten till ”Hämta på Google Play”. -->
+    <a class="btn primary" href="#" aria-disabled="true">Google Play – kommer snart</a>
+    <a class="btn" href="https://discord.gg/Q7YK2AneS6" rel="noopener">Discord</a>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Välj hur bestämd den ska vara</h2>
+  <div class="levels">
+    <div class="card"><h3>Light</h3><p>Listan finns i en avisering och en widget på hemskärmen. Inget fönster över dina appar, fingeravtrycket fungerar som vanligt.</p></div>
+    <div class="card"><h3>Classic</h3><p>Listan öppnas i helskärm när du låser upp, och på låsskärmen. Stänger du den kommer den tillbaka efter en tid du väljer.</p></div>
+    <div class="card"><h3>Strict</h3><p>Som Classic, men den kommer tillbaka efter 1 minut, tills dagens uppgifter är klara.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Skärmbilder</h2>
+  <div class="shots">
+    <figure><img src="img/sv/01-list-after-unlock.png" alt="Dagens lista efter upplåsning" loading="lazy" width="1080" height="1920"><figcaption>Efter upplåsning</figcaption></figure>
+    <figure><img src="img/sv/04-lock-screen-diamond.png" alt="Listan på låsskärmen, utseendet Diamant" loading="lazy" width="1080" height="1920"><figcaption>På låsskärmen</figcaption></figure>
+    <figure><img src="img/sv/07-levels-light-classic-strict.png" alt="Val av Light, Classic eller Strict" loading="lazy" width="1080" height="1920"><figcaption>Light, Classic, Strict</figcaption></figure>
+    <figure><img src="img/sv/09-light-notification.png" alt="Light: listan i en avisering" loading="lazy" width="1080" height="1920"><figcaption>Light: avisering</figcaption></figure>
+    <figure><img src="img/sv/10-home-widget.png" alt="Widget på hemskärmen med dagens uppgifter" loading="lazy" width="1080" height="1920"><figcaption>Widget på hemskärmen</figcaption></figure>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Vad den gör</h2>
+  <ul class="features">
+    <li>Dagliga uppgifter, uppgifter för valda veckodagar och engångsuppgifter, även för kommande dagar</li>
+    <li>Påminnelser vid en vald tid, med ”Klart” och ”Snooza 10 min”</li>
+    <li>Viktiga uppgifter, dra för att ändra ordning, ogjorda engångsuppgifter flyttas till nästa dag</li>
+    <li>Widget på hemskärmen: bocka av utan att öppna appen</li>
+    <li>Två utseenden på låsskärmen (Klocka eller Diamant); bocka av direkt där</li>
+    <li>Ny dag vid den timme du väljer, ett litet firande när allt är klart</li>
+    <li>Valfritt Väktarläge med en annan persons lösenord (av som standard, frågar om ditt samtycke, har en nödutgång)</li>
+    <li>Säkerhetskopia: Androids säkerhetskopia av telefonen och en fil du kan exportera och importera</li>
+    <li>Svenska, engelska och polska; ljust och mörkt tema</li>
+    <li>Inget konto, inga annonser, ingen analys. Gratis. Premium och Founder: kommer snart.</li>
+  </ul>
+</section>
+
+<section class="section" id="faq">
+  <h2>Frågor</h2>
+  <details>
+    <summary>Varför visas inte min lista?</summary>
+    <p>Kolla först nivån: <strong>Light</strong> öppnar aldrig något fönster – listan finns i aviseringen och widgeten. I Classic och Strict, öppna <em>Inställningar → Behörigheter &amp; tillförlitlighet</em>: alla rader ska vara gröna. ”Fixa” öppnar rätt skärm, ”Testa nu” kontrollerar att fönstret öppnas av sig självt.</p>
+    <p>Många telefoner stoppar appar i bakgrunden för att spara batteri. Inställningar för de vanligaste märkena (namnen kan skilja sig lite mellan versioner):</p>
+    <ul>
+      <li><strong>Realme, Oppo, OnePlus:</strong> appinfo → Batterianvändning → tillåt bakgrundsaktivitet och automatisk start; stäng av ”Pausa appaktivitet om den inte används”; lås Compliever bland senaste appar (på kortet ⋮ eller håll in, sedan Lås).</li>
+      <li><strong>Xiaomi, Redmi, POCO:</strong> appinfo → Autostart på; Batterisparläge → Inga begränsningar; Andra behörigheter → tillåt popup-fönster i bakgrunden och på låsskärmen; lås den bland senaste appar.</li>
+      <li><strong>Samsung:</strong> Batteri → Begränsningar för bakgrundsanvändning → lägg till Compliever i ”Appar som aldrig sover”; appinfo → Batteri → Obegränsad.</li>
+      <li><strong>Andra telefoner:</strong> appinfo → Batteri → Obegränsad (eller ”Optimera inte”).</li>
+    </ul>
+    <p>Guiden i appen visar stegen för din telefon.</p>
+  </details>
+  <details>
+    <summary>Vad är skillnaden mellan Light, Classic och Strict?</summary>
+    <p>Light: bara avisering och widget, inget täcker skärmen. Classic: listan i helskärm efter upplåsning och på låsskärmen; stänger du den kommer den tillbaka efter den tid du valt. Strict: som Classic, men den kommer tillbaka efter 1 minut tills dagens uppgifter är klara. Du kan byta nivå när som helst i Inställningar → Visning.</p>
+  </details>
+  <details>
+    <summary>Hur lägger jag till widgeten?</summary>
+    <p>Guiden och Inställningar → Visning kan be telefonen lägga till widgeten. Vissa telefoner (till exempel Realme) säger att den lades till men placerar den ingenstans. Om widgeten inte finns på hemskärmen, lägg till den för hand:</p>
+    <ol>
+      <li>Håll fingret på en tom plats på hemskärmen.</li>
+      <li>Tryck på Widgetar.</li>
+      <li>Hitta Compliever och dra den till skärmen.</li>
+    </ol>
+    <p>Tips: håll fingret på widgeten för att göra den större.</p>
+  </details>
+  <details>
+    <summary>Täcker den mitt alarm eller ett samtal?</summary>
+    <p>Nej. Alarm, timer och samtal går alltid först. Listan flyttar sig och kommer tillbaka när de är över.</p>
+  </details>
+  <details>
+    <summary>Varför fungerar inte fingeravtrycket i Classic?</summary>
+    <p>På vissa telefoner stänger ett fönster över låsskärmen av fingeravtrycksläsaren. Lås upp med knappen på listan, eller välj Light, som aldrig öppnar något fönster.</p>
+  </details>
+  <details>
+    <summary>Ny telefon – förlorar jag mina uppgifter?</summary>
+    <p>Från version 1.0.11: om Androids säkerhetskopia av telefonen är på kommer dina uppgifter och inställningar tillbaka av sig själva när du installerar Compliever på den nya telefonen. Du kan också använda Inställningar → Data → Säkerhetskopia → ”Exportera till fil” och importera filen på den nya telefonen. Behörigheterna ställs in på nytt på den nya telefonen.</p>
+  </details>
+  <details>
+    <summary>Kostar det något?</summary>
+    <p>Compliever är gratis, utan gräns för antal uppgifter och utan konto. Valfria Premium och Founder kommer snart.</p>
+  </details>
+  <details>
+    <summary>Vad händer med mina uppgifter?</summary>
+    <p>Allt stannar i telefonen. Appen har ingen server och skickar ingenting. Detaljer: <a href="privacy-policy.html#sv">integritetspolicy</a>.</p>
+  </details>
+</section>
+
+<footer class="foot">
+  <a href="privacy-policy.html#sv">Integritetspolicy</a> ·
+  <a href="licenses.html">Licenser för öppen källkod</a> ·
+  <a href="https://discord.gg/Q7YK2AneS6" rel="noopener">Discord</a>
+  <p>Compliever görs av en oberoende utvecklare i Sverige. Android är ett varumärke som tillhör Google LLC.</p>
+</footer>
+</body>
+</html>
